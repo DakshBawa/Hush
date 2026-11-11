@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper font-body text-ink;
+    background-image: radial-gradient(#E3DDFF 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+  }
+  :focus-visible {
+    outline: 3px solid #6C4CF1;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card { @apply rounded-2xl bg-white shadow-soft ring-1 ring-mist; }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-full bg-violet px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-ink disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-ghost { @apply rounded-full bg-white px-4 py-2 text-sm font-semibold ring-1 ring-ink/20 transition-colors hover:bg-mist; }
+  .btn-ghost[aria-pressed='true'] { @apply bg-mist; }
+  .chip { @apply rounded-full bg-white px-3.5 py-1.5 text-sm font-semibold ring-1 ring-mist transition-colors hover:ring-violet; }
+  .chip[aria-pressed='true'] { @apply bg-violet text-white ring-violet; }
+  .badge { @apply rounded-full bg-mist px-2.5 py-0.5 text-xs font-semibold; }
+  .field { @apply w-full resize-none rounded-xl bg-white px-4 py-3 text-lg ring-1 ring-mist placeholder:text-ink/45 focus:ring-2 focus:ring-violet; }
+}
